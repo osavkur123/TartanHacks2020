@@ -99,7 +99,7 @@ namespace Sanicball
 
             if (listener)
             {
-                listener.enabled = index == 0;
+                listener.enabled = true;
             }
         }
     }
