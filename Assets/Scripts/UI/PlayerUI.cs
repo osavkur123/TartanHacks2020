@@ -181,7 +181,7 @@ namespace Sanicball.UI
         private void Update()
         {
             CameraSplitter splitter = new CameraSplitter();
-            for (int i = 0; i < ActiveData.GameSettings.numPlayers; i++)
+            for (int i = 0; i < splitter.cameras.Length; i++)
             {
                 TargetCamera = Camera.allCameras[i];
                 if (TargetCamera)

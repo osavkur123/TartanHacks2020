@@ -12,12 +12,13 @@ namespace Sanicball
         private AudioListener listener;
 
         public int SplitscreenIndex { get; set; }
-
+        public Camera[] cameras;
         private void Start()
         {
             int count = Camera.allCamerasCount;
             listener = GetComponent<AudioListener>();
             int index = 0;
+            cameras = Camera.allCameras;
             foreach (Camera cam in Camera.allCameras) {
                 if (count == 2)
                 {

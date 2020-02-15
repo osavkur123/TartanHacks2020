@@ -145,6 +145,7 @@ namespace Sanicball.Gameplay
                 RespawnRequested(this, System.EventArgs.Empty);
         }
 
+        //Player 1 has to be Sanic and Player 2 has to be Knackles
         public void Init(BallType type, ControlType ctrlType, int characterId, string nickname)
         {
             if (characterId < ActiveData.GameSettings.numPlayers)
@@ -165,9 +166,10 @@ namespace Sanicball.Gameplay
             if (characterId < ActiveData.GameSettings.numPlayers)
             {
                 type = BallType.Player;
-                ctrlType = characterId == 0 ? ControlType.Keyboard : ControlType.Joystick1;
+                ctrlType = characterId == 0 ?  ControlType.Keyboard : ControlType.Joystick1;
                 nickname = "Player " + (characterId + 1).ToString();
             }
+            Debug.Log(characterId.ToString() + " " + type.ToString());
             //Set up drifty smoke
             smoke = Instantiate(prefabs.Smoke);
             smoke.target = this;
