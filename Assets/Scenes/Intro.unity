@@ -285,6 +285,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11452216, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
+      propertyPath: characters.Array.data[16].alternativeMesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 622c028821fb2fe48b3499a484e5fa1b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
   m_IsPrefabParent: 0

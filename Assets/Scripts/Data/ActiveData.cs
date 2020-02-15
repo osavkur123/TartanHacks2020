@@ -42,6 +42,10 @@ namespace Sanicball.Data
         private AudioClip eSportsMusic;
         [SerializeField]
         private ESportMode eSportsPrefab;
+        [SerializeField]
+        private AudioClip thomasMusic;
+        [SerializeField]
+        private AudioClip gokuMusic;
 
         #endregion Fields
 
@@ -60,6 +64,8 @@ namespace Sanicball.Data
         public static GameObject ESportsHat {get{return instance.eSportsHat;}}
         public static AudioClip ESportsMusic {get{return instance.eSportsMusic;}}
         public static ESportMode ESportsPrefab {get{return instance.eSportsPrefab;}}
+        public static AudioClip ThomasMusic { get { return instance.thomasMusic; } }
+        public static AudioClip GokuMusic { get { return instance.gokuMusic; } }
 
         public static bool ESportsFullyReady {
             get {
@@ -72,7 +78,7 @@ namespace Sanicball.Data
                         var players = m.Players;
                         foreach (var p in players) {
                             if (p.CtrlType != SanicballCore.ControlType.None) {
-                                if (p.CharacterId == 13) 
+                                if (p.CharacterId == 13)
                                 {
                                     possible = true;
                                 }

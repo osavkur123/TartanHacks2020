@@ -70,6 +70,41 @@ namespace Sanicball
             slidePosition = slidePositionMax;
             ShuffleSongs();
 
+            Sanicball.Logic.MatchManager mm = FindObjectOfType<Sanicball.Logic.MatchManager>();
+            if (mm)
+            {
+                var players = mm.Players;
+                foreach (var p in players)
+                {
+                    if (p.CtrlType != SanicballCore.ControlType.None)
+                    {
+                        if (!mm.InLobby)
+                        {
+                            if (p.CharacterId == 16)
+                            {
+                            
+                                List<Song> play = playlist.ToList();
+                                Song s = new Song();
+                                s.name = "Thomas the Tank Engine";
+                                s.clip = ActiveData.ThomasMusic;
+                                play.Insert(0, s);
+                                playlist = play.ToArray();
+                            }
+                            if (p.CharacterId == 17)
+                            {
+
+                                List<Song> play = playlist.ToList();
+                                Song s = new Song();
+                                s.name = "Super Saiyan 2.0";
+                                s.clip = ActiveData.GokuMusic;
+                                play.Insert(0, s);
+                                playlist = play.ToArray();
+                            }
+                        }
+                    }
+                }
+            }
+
             if (ActiveData.ESportsFullyReady)
             {
                 Sanicball.Logic.MatchManager m = FindObjectOfType<Sanicball.Logic.MatchManager>();
@@ -82,7 +117,6 @@ namespace Sanicball
                     playlist = p.ToArray();
                 }
             }
-            
 
             aSource.clip = playlist[0].clip;
             currentSongID = 0;
