@@ -148,7 +148,7 @@ namespace Sanicball.Gameplay
         //Player 1 has to be Sanic and Player 2 has to be Knackles
         public void Init(BallType type, ControlType ctrlType, int characterId, string nickname)
         {
-            if (characterId < ActiveData.GameSettings.numPlayers)
+            if (ActiveData.GameSettings.numPlayers == 2 && characterId < ActiveData.GameSettings.numPlayers)
             {
                 type = BallType.Player;
                 ctrlType = characterId == 0 ?  ControlType.Keyboard : ControlType.Joystick1;
@@ -163,7 +163,7 @@ namespace Sanicball.Gameplay
         private void Start()
         {
             Up = Vector3.up;
-            if (characterId < ActiveData.GameSettings.numPlayers)
+            if (ActiveData.GameSettings.numPlayers == 2 && characterId < ActiveData.GameSettings.numPlayers)
             {
                 type = BallType.Player;
                 ctrlType = characterId == 0 ?  ControlType.Keyboard : ControlType.Joystick1;
