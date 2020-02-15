@@ -287,7 +287,7 @@ namespace Sanicball.UI
 
         public void ESportsToggle()
         {
-            tempSettings.greenModeReady = !tempSettings.greenModeReady;
+            tempSettings.greenModeReady = !tempSettings.greenModeReady; //
             UpdateFields();
         }
 
