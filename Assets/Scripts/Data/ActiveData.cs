@@ -110,6 +110,7 @@ namespace Sanicball.Data
         {
             get
             {
+                if (GameSettings.eSportsReady) return false;
                 bool possible = false;
                 if (GameSettings.greenModeReady)
                 {
@@ -141,6 +142,7 @@ namespace Sanicball.Data
         {
             get
             {
+                if (GameSettings.eSportsReady || GameSettings.greenModeReady) return false;
                 bool possible = false;
                 if (GameSettings.blueModeReady)
                 {
@@ -154,6 +156,7 @@ namespace Sanicball.Data
         {
             get
             {
+                if (GameSettings.eSportsReady || GameSettings.greenModeReady || GameSettings.blueModeReady) return false;
                 bool possible = false;
                 if (GameSettings.redModeReady)
                 {
