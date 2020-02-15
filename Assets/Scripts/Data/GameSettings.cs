@@ -29,7 +29,7 @@ namespace Sanicball.Data
         public bool bloom = false;
 		public ReflectionQuality reflectionQuality = ReflectionQuality.Off;
         public bool eSportsReady = false;
-        public bool greenModeReady = false; // KJ
+        public bool greenModeReady = false;
 
         [Header("Gameplay")]
         public bool useOldControls = false;
@@ -67,7 +67,7 @@ namespace Sanicball.Data
             bloom = original.bloom;
             reflectionQuality = original.reflectionQuality;
             eSportsReady = original.eSportsReady;
-            greenModeReady = original.greenModeReady; // KJ
+            greenModeReady = original.greenModeReady;
 
             useOldControls = original.useOldControls;
             oldControlsMouseSpeed = original.oldControlsMouseSpeed;

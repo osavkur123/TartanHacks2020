@@ -89,8 +89,8 @@ namespace Sanicball
                 {
                     List<Song> p = playlist.ToList();
                     Song s = new Song();
-                    s.name = "Skrollex - Bungee Ride";
-                    s.clip = ActiveData.ESportsMusic;
+                    s.name = "It's not easy being green - Kermit the Froggo";
+                    s.clip = ActiveData.GreenMusic;
                     p.Insert(0, s);
                     playlist = p.ToArray();
                 }
