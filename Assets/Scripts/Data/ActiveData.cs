@@ -42,8 +42,6 @@ namespace Sanicball.Data
         private AudioClip eSportsMusic;
         [SerializeField]
         private ESportMode eSportsPrefab;
-        [SerializeField]
-        private ESportMode greenModePrefab;
 
         #endregion Fields
 
@@ -62,7 +60,6 @@ namespace Sanicball.Data
         public static GameObject ESportsHat {get{return instance.eSportsHat;}}
         public static AudioClip ESportsMusic {get{return instance.eSportsMusic;}}
         public static ESportMode ESportsPrefab {get{return instance.eSportsPrefab;}}
-        public static ESportMode GreenModePrefab { get { return instance.greenModePrefab; } } // KJ
 
         public static bool ESportsFullyReady {
             get {
@@ -76,37 +73,6 @@ namespace Sanicball.Data
                         foreach (var p in players) {
                             if (p.CtrlType != SanicballCore.ControlType.None) {
                                 if (p.CharacterId == 13) 
-                                {
-                                    possible = true;
-                                }
-                                else
-                                {
-                                    return false;
-                                }
-                            }
-                        }
-                    }
-                }
-                return possible;
-            }
-        }
-
-        public static bool greenModeFullyReady
-        {
-            get
-            {
-                bool possible = false;
-                if (GameSettings.greenModeReady)
-                {
-                    Sanicball.Logic.MatchManager m = FindObjectOfType<Sanicball.Logic.MatchManager>();
-                    if (m)
-                    {
-                        var players = m.Players;
-                        foreach (var p in players)
-                        {
-                            if (p.CtrlType != SanicballCore.ControlType.None)
-                            {
-                                if (p.CharacterId == 13)
                                 {
                                     possible = true;
                                 }

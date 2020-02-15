@@ -23,15 +23,10 @@ namespace Sanicball.UI
         public event System.EventHandler OnCountdownFinished;
 
         ESportMode esport;
-        greenMode green;
 
         void Start() {
             if (ActiveData.ESportsFullyReady) {
                 esport = Instantiate(ActiveData.ESportsPrefab);
-            }
-            else if (ActiveData.greenModeFullyReady)
-            {
-                esport = Instantiate(ActiveData.GreenModePrefab);
             }
         }
 
@@ -80,10 +75,6 @@ namespace Sanicball.UI
                         if (esport)
                         {
                             esport.StartTheShit();
-                        }
-                        else if (green)
-                        {
-                            green.StartTheShit();
                         }
                         break;
 

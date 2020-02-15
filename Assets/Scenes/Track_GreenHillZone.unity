@@ -39344,6 +39344,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11452216, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
+      propertyPath: eSportsMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 44aeddca0c186224090a76d97139eaa4, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
   m_IsPrefabParent: 0

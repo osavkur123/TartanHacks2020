@@ -339,7 +339,24 @@ MonoBehaviour:
     alternativeMesh: {fileID: 0}
     collisionMesh: {fileID: 0}
     tier: 1
-    hidden: 1
+    hidden: 0
+  - name: Thomas
+    artBy: Bob the Builder
+    stats:
+      rollSpeed: 100
+      airSpeed: 15
+      jumpHeight: 14
+      grip: 20
+    material: {fileID: 2100000, guid: a0e8488f0f30da448a41817da3516c06, type: 2}
+    icon: {fileID: 0}
+    color: {r: 0, g: 0.0896554, b: 1, a: 1}
+    minimapIcon: {fileID: 2100000, guid: 06e28b1ccdbc90343b005165898966eb, type: 2}
+    trail: {fileID: 2100000, guid: 535ce71ad14791d40b6cbe98a2276283, type: 2}
+    ballSize: 0.5
+    alternativeMesh: {fileID: 4300000, guid: a940097637a6f854ba08de994a8b7e4f, type: 3}
+    collisionMesh: {fileID: 0}
+    tier: 0
+    hidden: 0
   gameJoltInfo:
     gameID: 0
     privateKey: 
