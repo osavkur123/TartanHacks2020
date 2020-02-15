@@ -13,7 +13,14 @@ namespace Sanicball.Logic
         {
             var ball = (Ball)Instantiate(ballPrefab, position, rotation);
             ball.Init(ballType, ctrlType, character, nickname);
-            
+
+            var ball1 = (Ball)Instantiate(ballPrefab, position + 0.5f * Vector3.one, rotation);
+            ball1.Init(BallType.Follower, ControlType.None, character, nickname);
+            var ball2 = (Ball)Instantiate(ballPrefab, position + 1f * Vector3.one, rotation);
+            ball2.Init(BallType.Follower, ControlType.None, character, nickname);
+            var ball3 = (Ball)Instantiate(ballPrefab, position + 1.5f * Vector3.one, rotation);
+            ball3.Init(BallType.Follower, ControlType.None, character, nickname);
+
             return ball;
         }
     }

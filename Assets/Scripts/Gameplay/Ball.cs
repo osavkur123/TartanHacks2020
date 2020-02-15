@@ -9,7 +9,8 @@ namespace Sanicball.Gameplay
     {
         Player,
         LobbyPlayer,
-        AI
+        AI,
+        Follower
     }
 
     public class CheckpointPassArgs : System.EventArgs
@@ -240,6 +241,11 @@ namespace Sanicball.Gameplay
                 //Create AI component
                 gameObject.AddComponent<BallControlAI>();
             }
+            if (type == BallType.Follower)
+            {
+                //Create followers!
+                this.transform.localScale = 0.5f * Vector3.one;
+            }
         }
 
         private void SetCharacter(Data.CharacterInfo c)
@@ -311,6 +317,28 @@ namespace Sanicball.Gameplay
 
         private void Update()
         {
+            if (type == BallType.Follower)
+            {
+                Sanicball.Logic.MatchManager mm = FindObjectOfType<Sanicball.Logic.MatchManager>();
+                if (mm)
+                {
+                    var players = mm.Players;
+                    foreach (var p in players)
+                    {
+                        if (p.CtrlType != SanicballCore.ControlType.None)
+                        {
+                            if (p.CharacterId == 15)
+                            {
+                                if(Vector3.Distance(this.transform.position, p.BallObject.transform.position) > 1.5f)
+                                {
+                                    transform.position = Vector3.MoveTowards(transform.position, p.BallObject.transform.position, 0.075f);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             //Rolling sounds
             if (grounded)
             {

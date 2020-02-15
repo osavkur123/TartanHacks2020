@@ -347,13 +347,13 @@ MonoBehaviour:
       airSpeed: 15
       jumpHeight: 14
       grip: 20
-    material: {fileID: 2100000, guid: a0e8488f0f30da448a41817da3516c06, type: 2}
-    icon: {fileID: 21300000, guid: 1a49a1fa6c164e5459bd304bc831a180, type: 3}
+    material: {fileID: 0}
+    icon: {fileID: 21300000, guid: 71a9539c0fd1be94d93d79398a34c821, type: 3}
     color: {r: 0, g: 0.0896554, b: 1, a: 1}
     minimapIcon: {fileID: 2100000, guid: e19f4b295a308ae44999c6f5e55280f0, type: 2}
     trail: {fileID: 2100000, guid: aeddd812ea4ea9a41ac427dfc4c5257d, type: 2}
     ballSize: 1
-    alternativeMesh: {fileID: 4300000, guid: 622c028821fb2fe48b3499a484e5fa1b, type: 3}
+    alternativeMesh: {fileID: 4300000, guid: bac2b3b772f56b84d8b9cd384b329106, type: 3}
     collisionMesh: {fileID: 0}
     tier: 0
     hidden: 0
@@ -365,11 +365,28 @@ MonoBehaviour:
       jumpHeight: 14
       grip: 20
     material: {fileID: 2100000, guid: 38a419f08966e214f9b346753fc45b4d, type: 2}
-    icon: {fileID: 21300000, guid: 1a49a1fa6c164e5459bd304bc831a180, type: 3}
+    icon: {fileID: 21300000, guid: fcac47643ed0b884ba66157d894d95dd, type: 3}
     color: {r: 0.031795174, g: 0.41911763, b: 0, a: 1}
     minimapIcon: {fileID: 2100000, guid: e19f4b295a308ae44999c6f5e55280f0, type: 2}
     trail: {fileID: 2100000, guid: aeddd812ea4ea9a41ac427dfc4c5257d, type: 2}
     ballSize: 1
+    alternativeMesh: {fileID: 0}
+    collisionMesh: {fileID: 0}
+    tier: 0
+    hidden: 0
+  - name: Cremit
+    artBy: Him Jensen
+    stats:
+      rollSpeed: 100
+      airSpeed: 15
+      jumpHeight: 14
+      grip: 20
+    material: {fileID: 2100000, guid: febf01df5c1f29446961439d85b2300f, type: 2}
+    icon: {fileID: 21300000, guid: 335e062cd88fc714d8841e65986706a6, type: 3}
+    color: {r: 0.07474655, g: 0.9852941, b: 0, a: 1}
+    minimapIcon: {fileID: 2100000, guid: 58d5dd42d1d8c014f858dd73de876d9e, type: 2}
+    trail: {fileID: 2100000, guid: 6d7702b948c700749876d60a7efc17f1, type: 2}
+    ballSize: 0.8
     alternativeMesh: {fileID: 0}
     collisionMesh: {fileID: 0}
     tier: 0
