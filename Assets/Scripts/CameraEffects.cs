@@ -51,8 +51,11 @@ namespace Sanicball {
 			if (ActiveData.ESportsFullyReady)
 			{
 			}
+            else if (ActiveData.greenModeFullyReady)
+            {
+            }
 
-			EnableEffects();
+            EnableEffects();
 		}
 		
 		// Update is called once per frame

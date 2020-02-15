@@ -190,6 +190,9 @@ namespace Sanicball.Gameplay
             {
                 hatPrefab = ActiveData.ESportsHat;
             }
+            else if (ActiveData.GameSettings.greenModeReady)
+            {
+            }
 
             //Spawn hat
             if (hatPrefab)
@@ -247,6 +250,10 @@ namespace Sanicball.Gameplay
             GetComponent<Renderer>().material = c.material;
             GetComponent<TrailRenderer>().material = c.trail;
             if (c.name == "Super Sanic" && ActiveData.GameSettings.eSportsReady) {
+                GetComponent<TrailRenderer>().material = ActiveData.ESportsTrail;
+            }
+            else if (c.name == "Super Sanic" && ActiveData.GameSettings.greenModeReady)
+            {
                 GetComponent<TrailRenderer>().material = ActiveData.ESportsTrail;
             }
             transform.localScale = new Vector3(c.ballSize, c.ballSize, c.ballSize);
