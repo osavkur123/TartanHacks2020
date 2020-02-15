@@ -5,8 +5,9 @@ namespace Sanicball.Data
     [System.Serializable]
     public class GameSettings
     {
-        [Header("General")]
+        [Header("Online")]
         public string nickname = "";
+		public string serverListURL = "https://sanicball.bdgr.zone/servers/";
 
         public string gameJoltUsername;
         public string gameJoltToken;
@@ -17,13 +18,18 @@ namespace Sanicball.Data
         public bool fullscreen = true;
         public bool vsync = false;
         public bool useImperial = false;
+        public bool showControlsWhileWaiting = true;
 
         [Header("Graphics")]
         public int aa = 0;
 
         public bool trails = true;
         public bool shadows = true;
-        public ReflectionQuality reflectionQuality = ReflectionQuality.Medium;
+        public bool motionBlur = false;
+        public bool bloom = false;
+		public ReflectionQuality reflectionQuality = ReflectionQuality.Off;
+        public bool eSportsReady = false;
+        public bool greenMode = false; // KJ
 
         [Header("Gameplay")]
         public bool useOldControls = false;
@@ -44,6 +50,7 @@ namespace Sanicball.Data
         public void CopyValues(GameSettings original)
         {
             nickname = original.nickname;
+			serverListURL = original.serverListURL;
             gameJoltUsername = original.gameJoltUsername;
             gameJoltToken = original.gameJoltToken;
 
@@ -51,11 +58,16 @@ namespace Sanicball.Data
             fullscreen = original.fullscreen;
             vsync = original.vsync;
             useImperial = original.useImperial;
+            showControlsWhileWaiting = original.showControlsWhileWaiting;
 
             aa = original.aa;
             trails = original.trails;
             shadows = original.shadows;
+            motionBlur = original.motionBlur;
+            bloom = original.bloom;
             reflectionQuality = original.reflectionQuality;
+            eSportsReady = original.eSportsReady;
+            greenMode = original.greenMode; // KJ
 
             useOldControls = original.useOldControls;
             oldControlsMouseSpeed = original.oldControlsMouseSpeed;
@@ -116,6 +128,11 @@ namespace Sanicball.Data
             MusicPlayer music = GameObject.FindObjectOfType<MusicPlayer>();
             if (music)
                 music.GetComponent<AudioSource>().mute = !music;
+            //Camera effects
+            foreach(var cam in GameObject.FindObjectsOfType<CameraEffects>())
+            {
+                cam.EnableEffects();
+            }
         }
     }
 
