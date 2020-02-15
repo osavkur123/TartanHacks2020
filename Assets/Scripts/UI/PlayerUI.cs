@@ -114,7 +114,86 @@ namespace Sanicball.UI
         }
 
         public Camera TargetCamera { get; set; }
-        
+
+        public void fixingStuff()
+        {
+            if (TargetCamera)
+            {
+                fieldContainer.anchorMin = TargetCamera.rect.min;
+                fieldContainer.anchorMax = TargetCamera.rect.max;
+            }
+
+            if (TargetPlayer == null || TargetManager == null) return;
+
+            float speed = TargetPlayer.Speed;
+            string postfix = " ";
+
+            //Speed label
+            if (!ActiveData.GameSettings.useImperial)
+            {
+                postfix += (Mathf.Floor(speed) == 1f) ? "fast/h" : "fasts/h";
+            }
+            else
+            {
+                speed *= 0.62f;
+                postfix += (Mathf.Floor(speed) == 1f) ? "lightspeed" : "lightspeeds";
+                speedFieldLabel.fontSize = 62;
+            }
+
+            //Speed field size and color
+            var min = 96;
+            var max = 150;
+            var size = max - (max - min) * Mathf.Exp(-speed * 0.02f);
+            speedField.fontSize = (int)size;
+            speedField.text = Mathf.Floor(speed).ToString();
+            speedFieldLabel.text = postfix;
+
+            //Lap counter
+            if (!TargetPlayer.RaceFinished)
+            {
+                lapField.text = "Lap " + TargetPlayer.Lap + "/" + TargetManager.Settings.Laps;
+            }
+            else
+            {
+                if (TargetPlayer.FinishReport.Disqualified)
+                {
+                    lapField.text = "Disqualified";
+                    lapField.color = Color.red;
+                }
+                else
+                {
+                    lapField.text = "Race finished";
+                    lapField.color = finishedColor;
+                }
+            }
+
+            //Race time
+            TimeSpan timeToUse = TargetManager.RaceTime;
+            if (TargetPlayer.FinishReport != null)
+            {
+                timeToUse = TargetPlayer.FinishReport.Time;
+                timeField.color = finishedColor;
+            }
+            timeField.text = Utils.GetTimeString(timeToUse);
+
+            if (TargetPlayer.Timeout > 0)
+            {
+                timeField.text += Environment.NewLine + "<b>Timeout</b> " + Utils.GetTimeString(TimeSpan.FromSeconds(TargetPlayer.Timeout));
+            }
+
+            //Checkpoint marker
+            if (TargetPlayer.NextCheckpoint != null)
+                checkpointMarker.Target = TargetPlayer.NextCheckpoint.transform;
+            else
+                checkpointMarker.Target = null;
+            checkpointMarker.CameraToUse = TargetCamera;
+
+            playerMarkers.RemoveAll(a => a == null); //Remove destroyed markers from the list (Markers are destroyed if the player they're following leaves)
+            foreach (Marker m in playerMarkers.ToList())
+            {
+                m.CameraToUse = TargetCamera;
+            }
+        }
         private void TargetPlayer_Respawned(object sender, EventArgs e)
         {
             UISound.Play(respawnSound);
@@ -180,85 +259,17 @@ namespace Sanicball.UI
 
         private void Update()
         {
-            CameraSplitter splitter = new CameraSplitter();
-            for (int i = 0; i < splitter.cameras.Length; i++)
+            if (ActiveData.GameSettings.numPlayers == 1)
             {
-                TargetCamera = Camera.allCameras[i];
-                if (TargetCamera)
+                fixingStuff();
+            }
+            else
+            {
+                CameraSplitter splitter = new CameraSplitter();
+                for (int i = 0; i < splitter.cameras.Length; i++)
                 {
-                    fieldContainer.anchorMin = TargetCamera.rect.min;
-                    fieldContainer.anchorMax = TargetCamera.rect.max;
-                }
-
-                if (TargetPlayer == null || TargetManager == null) return;
-
-                float speed = TargetPlayer.Speed;
-                string postfix = " ";
-
-                //Speed label
-                if (!ActiveData.GameSettings.useImperial)
-                {
-                    postfix += (Mathf.Floor(speed) == 1f) ? "fast/h" : "fasts/h";
-                }
-                else
-                {
-                    speed *= 0.62f;
-                    postfix += (Mathf.Floor(speed) == 1f) ? "lightspeed" : "lightspeeds";
-                    speedFieldLabel.fontSize = 62;
-                }
-
-                //Speed field size and color
-                var min = 96;
-                var max = 150;
-                var size = max - (max - min) * Mathf.Exp(-speed * 0.02f);
-                speedField.fontSize = (int)size;
-                speedField.text = Mathf.Floor(speed).ToString();
-                speedFieldLabel.text = postfix;
-
-                //Lap counter
-                if (!TargetPlayer.RaceFinished)
-                {
-                    lapField.text = "Lap " + TargetPlayer.Lap + "/" + TargetManager.Settings.Laps;
-                }
-                else
-                {
-                    if (TargetPlayer.FinishReport.Disqualified)
-                    {
-                        lapField.text = "Disqualified";
-                        lapField.color = Color.red;
-                    }
-                    else
-                    {
-                        lapField.text = "Race finished";
-                        lapField.color = finishedColor;
-                    }
-                }
-
-                //Race time
-                TimeSpan timeToUse = TargetManager.RaceTime;
-                if (TargetPlayer.FinishReport != null)
-                {
-                    timeToUse = TargetPlayer.FinishReport.Time;
-                    timeField.color = finishedColor;
-                }
-                timeField.text = Utils.GetTimeString(timeToUse);
-
-                if (TargetPlayer.Timeout > 0)
-                {
-                    timeField.text += Environment.NewLine + "<b>Timeout</b> " + Utils.GetTimeString(TimeSpan.FromSeconds(TargetPlayer.Timeout));
-                }
-
-                //Checkpoint marker
-                if (TargetPlayer.NextCheckpoint != null)
-                    checkpointMarker.Target = TargetPlayer.NextCheckpoint.transform;
-                else
-                    checkpointMarker.Target = null;
-                checkpointMarker.CameraToUse = TargetCamera;
-
-                playerMarkers.RemoveAll(a => a == null); //Remove destroyed markers from the list (Markers are destroyed if the player they're following leaves)
-                foreach (Marker m in playerMarkers.ToList())
-                {
-                    m.CameraToUse = TargetCamera;
+                    TargetCamera = Camera.allCameras[i];
+                    fixingStuff();
                 }
             }
         }
