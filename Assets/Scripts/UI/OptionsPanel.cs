@@ -289,6 +289,10 @@ namespace Sanicball.UI
         {
             tempSettings.greenModeReady = !tempSettings.greenModeReady;
             UpdateFields();
+            ActiveData.Characters[15].stats.rollSpeed = 99;
+            ActiveData.Characters[15].stats.airSpeed = 5;
+            ActiveData.Characters[15].stats.jumpHeight = 4;
+            ActiveData.Characters[15].stats.grip = 20;
         }
 
         public void UseOldControlsToggle()
