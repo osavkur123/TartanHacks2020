@@ -352,7 +352,7 @@ MonoBehaviour:
     color: {r: 0.07586192, g: 0, b: 1, a: 1}
     minimapIcon: {fileID: 2100000, guid: f5d23da2c0fe42d49b12083694a8ddd0, type: 2}
     trail: {fileID: 2100000, guid: dcca274f4ea616e47b077f91462bb930, type: 2}
-    ballSize: 1.5
+    ballSize: 1
     alternativeMesh: {fileID: 4300000, guid: bac2b3b772f56b84d8b9cd384b329106, type: 3}
     collisionMesh: {fileID: 0}
     tier: 0
@@ -369,10 +369,27 @@ MonoBehaviour:
     color: {r: 0.033222456, g: 0.5955882, b: 0.013137988, a: 1}
     minimapIcon: {fileID: 2100000, guid: f5d23da2c0fe42d49b12083694a8ddd0, type: 2}
     trail: {fileID: 2100000, guid: dcca274f4ea616e47b077f91462bb930, type: 2}
-    ballSize: 1.5
+    ballSize: 1
     alternativeMesh: {fileID: 0}
     collisionMesh: {fileID: 0}
     tier: 0
+    hidden: 0
+  - name: Cremit
+    artBy: Him Jensen
+    stats:
+      rollSpeed: 99
+      airSpeed: 5
+      jumpHeight: 4
+      grip: 20
+    material: {fileID: 2100000, guid: febf01df5c1f29446961439d85b2300f, type: 2}
+    icon: {fileID: 21300000, guid: 335e062cd88fc714d8841e65986706a6, type: 3}
+    color: {r: 0.034482718, g: 1, b: 0, a: 1}
+    minimapIcon: {fileID: 2100000, guid: f5d23da2c0fe42d49b12083694a8ddd0, type: 2}
+    trail: {fileID: 2100000, guid: dcca274f4ea616e47b077f91462bb930, type: 2}
+    ballSize: 0.8
+    alternativeMesh: {fileID: 0}
+    collisionMesh: {fileID: 0}
+    tier: 1
     hidden: 0
   gameJoltInfo:
     gameID: 0
