@@ -28,6 +28,7 @@ namespace Sanicball.UI
         public Text reflectionQuality;
         public Text eSportsReady;
         public Text greenModeReady;
+        public Text numPlayers;
 
         [Header("Gameplay")]
         public Text controlMode;
@@ -94,6 +95,7 @@ namespace Sanicball.UI
             reflectionQuality.text = tempSettings.reflectionQuality.ToString();
             eSportsReady.text = tempSettings.eSportsReady ? "Born Ready" : "No Way";
             greenModeReady.text = tempSettings.greenModeReady ? "2fast2green" : "lame";
+            numPlayers.text = tempSettings.numPlayers == 1 ? "1" : "2";
 
             controlMode.text = tempSettings.useOldControls ? "Rotate manually (Precise)" : "Follow velocity (Intuitive)";
             cameraSpeedMouse.text = tempSettings.oldControlsMouseSpeed.ToString("n1");
@@ -260,6 +262,13 @@ namespace Sanicball.UI
         public void BloomToggle()
         {
             tempSettings.bloom = !tempSettings.bloom;
+            UpdateFields();
+        }
+
+        public void NumPlayersToggle()
+        {
+            if (tempSettings.numPlayers == 1) tempSettings.numPlayers = 2;
+            else tempSettings.numPlayers = 1;
             UpdateFields();
         }
 

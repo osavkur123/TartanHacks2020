@@ -29,6 +29,7 @@ namespace Sanicball.Data
         public bool bloom = false;
 		public ReflectionQuality reflectionQuality = ReflectionQuality.Off;
         public bool eSportsReady = false;
+        public int numPlayers = 1;
         public bool greenModeReady = false; // KJ
 
         [Header("Gameplay")]
@@ -67,6 +68,7 @@ namespace Sanicball.Data
             bloom = original.bloom;
             reflectionQuality = original.reflectionQuality;
             eSportsReady = original.eSportsReady;
+            numPlayers = original.numPlayers;
             greenModeReady = original.greenModeReady; // KJ
 
             useOldControls = original.useOldControls;
