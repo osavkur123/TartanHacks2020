@@ -266,7 +266,7 @@ namespace Sanicball.UI
             else
             {
                 CameraSplitter splitter = new CameraSplitter();
-                for (int i = 0; i < splitter.cameras.Length; i++)
+                for (int i = 0; i < Camera.allCameras.Length; i++)
                 {
                     TargetCamera = Camera.allCameras[i];
                     fixingStuff();
