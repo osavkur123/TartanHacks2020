@@ -285,6 +285,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11452216, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
+      propertyPath: characters.Array.data[16].name
+      value: Thomas
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452216, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
+      propertyPath: characters.Array.data[16].artBy
+      value: Bob the Builder
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452216, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
+      propertyPath: characters.Array.data[16].material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452216, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
+      propertyPath: characters.Array.data[16].color.r
+      value: 0.07586192
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452216, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
+      propertyPath: characters.Array.data[16].color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452216, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
+      propertyPath: characters.Array.data[16].tier
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a1320b5449ace84db564be1a1ddd206, type: 2}
   m_IsPrefabParent: 0

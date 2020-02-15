@@ -340,6 +340,40 @@ MonoBehaviour:
     collisionMesh: {fileID: 0}
     tier: 1
     hidden: 0
+  - name: Thomas
+    artBy: Bob the Builder
+    stats:
+      rollSpeed: 99
+      airSpeed: 5
+      jumpHeight: 4
+      grip: 20
+    material: {fileID: 0}
+    icon: {fileID: 21300000, guid: 69604edd7f9387841a777c31d9ad559a, type: 3}
+    color: {r: 0.07586192, g: 0, b: 1, a: 1}
+    minimapIcon: {fileID: 2100000, guid: f5d23da2c0fe42d49b12083694a8ddd0, type: 2}
+    trail: {fileID: 2100000, guid: dcca274f4ea616e47b077f91462bb930, type: 2}
+    ballSize: 1.5
+    alternativeMesh: {fileID: 4300000, guid: bac2b3b772f56b84d8b9cd384b329106, type: 3}
+    collisionMesh: {fileID: 0}
+    tier: 0
+    hidden: 0
+  - name: Super Sand
+    artBy: 4Kids
+    stats:
+      rollSpeed: 99
+      airSpeed: 5
+      jumpHeight: 4
+      grip: 20
+    material: {fileID: 2100000, guid: 38a419f08966e214f9b346753fc45b4d, type: 2}
+    icon: {fileID: 21300000, guid: 69604edd7f9387841a777c31d9ad559a, type: 3}
+    color: {r: 0.033222456, g: 0.5955882, b: 0.013137988, a: 1}
+    minimapIcon: {fileID: 2100000, guid: f5d23da2c0fe42d49b12083694a8ddd0, type: 2}
+    trail: {fileID: 2100000, guid: dcca274f4ea616e47b077f91462bb930, type: 2}
+    ballSize: 1.5
+    alternativeMesh: {fileID: 0}
+    collisionMesh: {fileID: 0}
+    tier: 0
+    hidden: 0
   gameJoltInfo:
     gameID: 0
     privateKey: 
@@ -356,6 +390,8 @@ MonoBehaviour:
   greenModePrefab: {fileID: 11470328, guid: d877379dcf0f8e84d9c57fc0b5b68fc8, type: 2}
   blueModePrefab: {fileID: 11410320, guid: 477daed5b835c1c4e9f2563d3761f5c6, type: 2}
   redModePrefab: {fileID: 11468492, guid: c9d6b8c571ba0564e854fdf6d5c5cde5, type: 2}
+  thomasMusic: {fileID: 8300000, guid: c34bbeaff74389d45b2e609f1bf85024, type: 3}
+  gokuMusic: {fileID: 8300000, guid: af60056d1ec8bf84894e982535f86410, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
