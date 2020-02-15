@@ -41,11 +41,22 @@ namespace Sanicball.Data
         [SerializeField]
         private AudioClip eSportsMusic;
         [SerializeField]
+        private AudioClip greenMusic;
+        [SerializeField]
+        private AudioClip blueMusic;
+        [SerializeField]
+        private AudioClip redMusic;
+        [SerializeField]
         private ESportMode eSportsPrefab;
         [SerializeField]
         private AudioClip thomasMusic;
         [SerializeField]
         private AudioClip gokuMusic;
+        private greenMode greenModePrefab;
+        [SerializeField]
+        private blueMode blueModePrefab;
+        [SerializeField]
+        private redMode redModePrefab;
 
         #endregion Fields
 
@@ -63,10 +74,16 @@ namespace Sanicball.Data
         public static Material ESportsTrail {get{return instance.eSportsTrail;}}
         public static GameObject ESportsHat {get{return instance.eSportsHat;}}
         public static AudioClip ESportsMusic {get{return instance.eSportsMusic;}}
+        public static AudioClip GreenMusic { get { return instance.greenMusic; } }
+        public static AudioClip BlueMusic { get { return instance.blueMusic; } }
+        public static AudioClip RedMusic { get { return instance.redMusic; } }
         public static ESportMode ESportsPrefab {get{return instance.eSportsPrefab;}}
         public static AudioClip ThomasMusic { get { return instance.thomasMusic; } }
         public static AudioClip GokuMusic { get { return instance.gokuMusic; } }
-
+        public static greenMode GreenModePrefab { get { return instance.greenModePrefab; } }
+        public static blueMode BlueModePrefab { get { return instance.blueModePrefab; } }
+        public static redMode RedModePrefab { get { return instance.redModePrefab; } }
+        
         public static bool ESportsFullyReady {
             get {
                 bool possible = false;
@@ -78,7 +95,7 @@ namespace Sanicball.Data
                         var players = m.Players;
                         foreach (var p in players) {
                             if (p.CtrlType != SanicballCore.ControlType.None) {
-                                if (p.CharacterId == 13)
+                                if (p.CharacterId == 13) 
                                 {
                                     possible = true;
                                 }
@@ -89,6 +106,63 @@ namespace Sanicball.Data
                             }
                         }
                     }
+                }
+                return possible;
+            }
+        }
+
+        public static bool greenModeFullyReady
+        {
+            get
+            {
+                bool possible = false;
+                if (GameSettings.greenModeReady)
+                {
+                    possible = true;
+                    Sanicball.Logic.MatchManager m = FindObjectOfType<Sanicball.Logic.MatchManager>();
+                    if (m)
+                    {
+                        var players = m.Players;
+                        foreach (var p in players)
+                        {
+                            if (p.CtrlType != SanicballCore.ControlType.None)
+                            {
+                                if (p.CharacterId == 15)
+                                {
+                                    ActiveData.Characters[15].stats.rollSpeed = 500;
+                                    ActiveData.Characters[15].stats.airSpeed = 300;
+                                    ActiveData.Characters[15].stats.jumpHeight = 0;
+                                    ActiveData.Characters[15].stats.grip = 200;
+                                }
+                            }
+                        }
+                    }
+                }
+                return possible;
+            }
+        }
+
+        public static bool blueModeFullyReady
+        {
+            get
+            {
+                bool possible = false;
+                if (GameSettings.blueModeReady)
+                {
+                    possible = true;
+                }
+                return possible;
+            }
+        }
+
+        public static bool redModeFullyReady
+        {
+            get
+            {
+                bool possible = false;
+                if (GameSettings.redModeReady)
+                {
+                    possible = true;
                 }
                 return possible;
             }

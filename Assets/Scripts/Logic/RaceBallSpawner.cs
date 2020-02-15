@@ -19,7 +19,7 @@ namespace Sanicball.Logic
 
         [SerializeField]
         private LayerMask ballSpawningMask = new LayerMask();
-
+        
         public Ball SpawnBall(int position, BallType ballType, ControlType ctrlType, int character, string nickname)
         {
             float characterSize = ActiveData.Characters[character].ballSize;

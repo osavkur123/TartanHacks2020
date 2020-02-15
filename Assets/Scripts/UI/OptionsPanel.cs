@@ -28,6 +28,11 @@ namespace Sanicball.UI
         public Text reflectionQuality;
         public Text eSportsReady;
 
+        public Text greenModeReady;
+        public Text numPlayers;
+        public Text blueModeReady;
+        public Text redModeReady;
+
         [Header("Gameplay")]
         public Text controlMode;
 
@@ -91,7 +96,11 @@ namespace Sanicball.UI
             motionBlur.text = tempSettings.motionBlur ? "On" : "Off";
             bloom.text = tempSettings.bloom ? "On" : "Off";
             reflectionQuality.text = tempSettings.reflectionQuality.ToString();
-            eSportsReady.text = tempSettings.eSportsReady ? "Born ready" : "No way";
+            eSportsReady.text = tempSettings.eSportsReady ? "Born Ready" : "No Way";
+            greenModeReady.text = tempSettings.greenModeReady ? "2fast2green" : "lame";
+            numPlayers.text = tempSettings.numPlayers == 1 ? "1" : "2";
+            blueModeReady.text = tempSettings.blueModeReady ? "da ba dee" : "da ba dye";
+            redModeReady.text = tempSettings.redModeReady ? "red E" : "bourgeois E";
 
 			controlMode.text = tempSettings.useOldControls ? "Rotate manually (Precise)" : "Follow velocity (Intuitive)";
             cameraSpeedMouse.text = tempSettings.oldControlsMouseSpeed.ToString("n1");
@@ -261,6 +270,13 @@ namespace Sanicball.UI
             UpdateFields();
         }
 
+        public void NumPlayersToggle()
+        {
+            if (tempSettings.numPlayers == 1) tempSettings.numPlayers = 2;
+            else tempSettings.numPlayers = 1;
+            UpdateFields();
+        }
+
         public void ReflectionQualityUp()
         {
             int q = (int)tempSettings.reflectionQuality;
@@ -278,8 +294,31 @@ namespace Sanicball.UI
         }
 
         public void ESportsToggle()
+
         {
             tempSettings.eSportsReady = !tempSettings.eSportsReady;
+            UpdateFields();
+        }
+
+        public void greenModeToggle()
+        {
+            tempSettings.eSportsReady = !tempSettings.eSportsReady;
+            UpdateFields();
+            ActiveData.Characters[15].stats.rollSpeed = 99;
+            ActiveData.Characters[15].stats.airSpeed = 5;
+            ActiveData.Characters[15].stats.jumpHeight = 4;
+            ActiveData.Characters[15].stats.grip = 20;
+        }
+
+        public void blueModeToggle()
+        {
+            tempSettings.blueModeReady = !tempSettings.blueModeReady;
+            UpdateFields();
+        }
+
+        public void redModeToggle()
+        {
+            tempSettings.redModeReady = !tempSettings.redModeReady;
             UpdateFields();
         }
 

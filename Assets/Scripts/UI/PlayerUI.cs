@@ -114,71 +114,8 @@ namespace Sanicball.UI
         }
 
         public Camera TargetCamera { get; set; }
-        
-        private void TargetPlayer_Respawned(object sender, EventArgs e)
-        {
-            UISound.Play(respawnSound);
 
-            checkpointTimeField.text = "Respawn lap time penalty";
-            checkpointTimeField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
-
-            checkpointTimeDiffField.color = Color.red;
-            checkpointTimeDiffField.text = "+" + Utils.GetTimeString(TimeSpan.FromSeconds(5));
-            checkpointTimeDiffField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
-        }
-
-        private void TargetPlayer_NextCheckpointPassed(object sender, NextCheckpointPassArgs e)
-        {
-            UISound.Play(checkpointSound);
-            checkpointTimeField.text = Utils.GetTimeString(e.CurrentLapTime);
-            checkpointTimeField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
-
-            if (TargetPlayer.LapRecordsEnabled)
-            {
-				CharacterTier tier = ActiveData.Characters[targetPlayer.Character].tier;
-                string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-                int stage = ActiveData.Stages.Where(a => a.sceneName == sceneName).First().id;
-
-                float time = (float)e.CurrentLapTime.TotalSeconds;
-
-                RaceRecord bestRecord = ActiveData.RaceRecords
-                    .Where(a => a.Tier == tier && a.Stage == stage && a.GameVersion == GameVersion.AS_FLOAT && a.WasTesting == GameVersion.IS_TESTING)
-                    .OrderBy(a => a.Time)
-                    .FirstOrDefault();
-
-                if (bestRecord != null)
-                {
-                    float diff = time - bestRecord.CheckpointTimes[e.IndexOfPreviousCheckpoint];
-
-                    bool faster = diff < 0;
-                    TimeSpan diffSpan = TimeSpan.FromSeconds(Mathf.Abs(diff));
-
-                    checkpointTimeDiffField.text = (faster ? "-" : "+") + Utils.GetTimeString(diffSpan);
-                    checkpointTimeDiffField.color = faster ? Color.blue : Color.red;
-                    checkpointTimeDiffField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
-
-                    if (e.IndexOfPreviousCheckpoint == StageReferences.Active.checkpoints.Length - 1 && faster)
-                    {
-                        checkpointTimeDiffField.text = "New lap record!";
-                    }
-                }
-                else
-                {
-                    if (e.IndexOfPreviousCheckpoint == StageReferences.Active.checkpoints.Length - 1)
-                    {
-                        checkpointTimeDiffField.text = "Lap record set!";
-                        checkpointTimeDiffField.color = Color.blue;
-                        checkpointTimeDiffField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
-                    }
-                }
-            }
-        }
-
-        private void Start()
-        {
-        }
-
-        private void Update()
+        public void fixingStuff()
         {
             if (TargetCamera)
             {
@@ -255,6 +192,85 @@ namespace Sanicball.UI
             foreach (Marker m in playerMarkers.ToList())
             {
                 m.CameraToUse = TargetCamera;
+            }
+        }
+        private void TargetPlayer_Respawned(object sender, EventArgs e)
+        {
+            UISound.Play(respawnSound);
+
+            checkpointTimeField.text = "Respawn lap time penalty";
+            checkpointTimeField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
+
+            checkpointTimeDiffField.color = Color.red;
+            checkpointTimeDiffField.text = "+" + Utils.GetTimeString(TimeSpan.FromSeconds(5));
+            checkpointTimeDiffField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
+        }
+
+        private void TargetPlayer_NextCheckpointPassed(object sender, NextCheckpointPassArgs e)
+        {
+            UISound.Play(checkpointSound);
+            checkpointTimeField.text = Utils.GetTimeString(e.CurrentLapTime);
+            checkpointTimeField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
+
+            if (TargetPlayer.LapRecordsEnabled)
+            {
+				CharacterTier tier = ActiveData.Characters[targetPlayer.Character].tier;
+                string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+                int stage = ActiveData.Stages.Where(a => a.sceneName == sceneName).First().id;
+
+                float time = (float)e.CurrentLapTime.TotalSeconds;
+
+                RaceRecord bestRecord = ActiveData.RaceRecords
+                    .Where(a => a.Tier == tier && a.Stage == stage && a.GameVersion == GameVersion.AS_FLOAT && a.WasTesting == GameVersion.IS_TESTING)
+                    .OrderBy(a => a.Time)
+                    .FirstOrDefault();
+
+                if (bestRecord != null)
+                {
+                    float diff = time - bestRecord.CheckpointTimes[e.IndexOfPreviousCheckpoint];
+
+                    bool faster = diff < 0;
+                    TimeSpan diffSpan = TimeSpan.FromSeconds(Mathf.Abs(diff));
+
+                    checkpointTimeDiffField.text = (faster ? "-" : "+") + Utils.GetTimeString(diffSpan);
+                    checkpointTimeDiffField.color = faster ? Color.blue : Color.red;
+                    checkpointTimeDiffField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
+
+                    if (e.IndexOfPreviousCheckpoint == StageReferences.Active.checkpoints.Length - 1 && faster)
+                    {
+                        checkpointTimeDiffField.text = "New lap record!";
+                    }
+                }
+                else
+                {
+                    if (e.IndexOfPreviousCheckpoint == StageReferences.Active.checkpoints.Length - 1)
+                    {
+                        checkpointTimeDiffField.text = "Lap record set!";
+                        checkpointTimeDiffField.color = Color.blue;
+                        checkpointTimeDiffField.GetComponent<ToggleCanvasGroup>().ShowTemporarily(2f);
+                    }
+                }
+            }
+        }
+
+        private void Start()
+        {
+        }
+
+        private void Update()
+        {
+            if (ActiveData.GameSettings.numPlayers == 1)
+            {
+                fixingStuff();
+            }
+            else
+            {
+                CameraSplitter splitter = new CameraSplitter();
+                for (int i = 0; i < Camera.allCameras.Length; i++)
+                {
+                    TargetCamera = Camera.allCameras[i];
+                    fixingStuff();
+                }
             }
         }
     }

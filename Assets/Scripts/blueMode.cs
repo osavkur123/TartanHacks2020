@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Sanicball
 {
-    public class greenMode : MonoBehaviour
+    public class blueMode : MonoBehaviour
     {
         public Texture2D screenOverlay;
         public Texture2D solidWhite;
-        private Color currentColor = new Color(0, 1f, 0, 0.2f);
+        private Color currentColor = new Color(0, 0, 1f, 0.2f);
         private bool timerOn = false;
         private float timer = 1f;
         bool started = false;
@@ -51,7 +51,7 @@ namespace Sanicball
                 colorTimer -= Time.deltaTime;
                 if (colorTimer <= 0)
                 {
-                    currentColor = new Color(0, 1f, 0, Random.Range(0f, 0.3f));
+                    currentColor = new Color(0, 0, 1f, Random.Range(0f, 0.3f));
                     colorTimer += COLOR_TIME;
                 }
             }
