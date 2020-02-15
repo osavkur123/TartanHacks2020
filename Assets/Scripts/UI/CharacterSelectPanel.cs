@@ -56,6 +56,7 @@ namespace Sanicball.UI
             {
                 charList = charList.Where(a => a.tier == SanicballCore.CharacterTier.Hyperspeed).ToArray();
             }
+
             else if (ActiveData.GameSettings.greenModeReady)
             {
                 charList = charList.Where(a => a.tier == SanicballCore.CharacterTier.Odd).ToArray();

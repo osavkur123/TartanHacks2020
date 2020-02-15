@@ -340,6 +340,40 @@ MonoBehaviour:
     collisionMesh: {fileID: 0}
     tier: 1
     hidden: 0
+  - name: Thomas
+    artBy: Bob the Builder
+    stats:
+      rollSpeed: 100
+      airSpeed: 15
+      jumpHeight: 14
+      grip: 20
+    material: {fileID: 2100000, guid: a0e8488f0f30da448a41817da3516c06, type: 2}
+    icon: {fileID: 21300000, guid: 1a49a1fa6c164e5459bd304bc831a180, type: 3}
+    color: {r: 0, g: 0.0896554, b: 1, a: 1}
+    minimapIcon: {fileID: 2100000, guid: e19f4b295a308ae44999c6f5e55280f0, type: 2}
+    trail: {fileID: 2100000, guid: aeddd812ea4ea9a41ac427dfc4c5257d, type: 2}
+    ballSize: 1
+    alternativeMesh: {fileID: 4300000, guid: 622c028821fb2fe48b3499a484e5fa1b, type: 3}
+    collisionMesh: {fileID: 0}
+    tier: 0
+    hidden: 0
+  - name: Super Sand
+    artBy: Nintendo
+    stats:
+      rollSpeed: 100
+      airSpeed: 15
+      jumpHeight: 14
+      grip: 20
+    material: {fileID: 2100000, guid: 38a419f08966e214f9b346753fc45b4d, type: 2}
+    icon: {fileID: 21300000, guid: 1a49a1fa6c164e5459bd304bc831a180, type: 3}
+    color: {r: 0.031795174, g: 0.41911763, b: 0, a: 1}
+    minimapIcon: {fileID: 2100000, guid: e19f4b295a308ae44999c6f5e55280f0, type: 2}
+    trail: {fileID: 2100000, guid: aeddd812ea4ea9a41ac427dfc4c5257d, type: 2}
+    ballSize: 1
+    alternativeMesh: {fileID: 0}
+    collisionMesh: {fileID: 0}
+    tier: 0
+    hidden: 0
   gameJoltInfo:
     gameID: 0
     privateKey: 
@@ -353,10 +387,11 @@ MonoBehaviour:
   blueMusic: {fileID: 8300000, guid: 929642433f657244fa5a1c625cdf3bb6, type: 3}
   redMusic: {fileID: 8300000, guid: 6304311cd40375e4da5be7ba6127c712, type: 3}
   eSportsPrefab: {fileID: 11400000, guid: f55190f64bbb0c349bcd0f128756a753, type: 2}
+  thomasMusic: {fileID: 8300000, guid: e0cccf589fa99024baf9fa1159f509a0, type: 3}
+  gokuMusic: {fileID: 8300000, guid: 153e2706458b5d4439620e2f293764d8, type: 3}
   greenModePrefab: {fileID: 11470328, guid: d877379dcf0f8e84d9c57fc0b5b68fc8, type: 2}
   blueModePrefab: {fileID: 11410320, guid: 477daed5b835c1c4e9f2563d3761f5c6, type: 2}
   redModePrefab: {fileID: 11468492, guid: c9d6b8c571ba0564e854fdf6d5c5cde5, type: 2}
---- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2

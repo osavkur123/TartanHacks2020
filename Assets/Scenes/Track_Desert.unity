@@ -8403,7 +8403,7 @@ Transform:
   m_LocalRotation: {x: -0.09237036, y: -0.73326164, z: 0.092533, w: 0.6672577}
   m_LocalPosition: {x: -5212.777, y: -27.062622, z: -1809.0001}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.7123, y: -95.3027, z: 15.009}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -10723,6 +10723,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
       propertyPath: m_LocalPosition.x
       value: -281.83743
@@ -10755,6 +10759,126 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[1].name
+      value: Deadmau5 - Infra Super Turbo Pig Cart Racer
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ef283d9cd9a1df049aa8104acd1f9467, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[2].name
+      value: Sonic Adventure 2 - City Escape
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f06d9b26bb25af2419c9fac3323bf81d, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[3].name
+      value: Tube and Berger - Straight Ahead (Instrumental)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 903093182a60b404b8e1c7e1b3683647, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[4].name
+      value: Sonic R - Can you feel the Sunshine?
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f11158510addae4e9aa863d642470c6, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[5].name
+      value: Sonic X theme song (Gotta go fast)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b445743520587ac4d94a171cc16853db, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[6].name
+      value: Sonic the Hedgehog CD - Sonic Boom
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 620a36572d220564d8b06d50a724704e, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[7].name
+      value: Daytona USA - Rolling start!
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d23cf9326a1ddb14ebd6b635fa272c81, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[8].name
+      value: Sonic the Hedgehog CD - Intro (Toot Toot Sonic Warrior)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 76ab3b513c848a8479975f626779e5f3, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[9].name
+      value: Ugly Baby - Pronto
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d9b7697ce54b7c4b9ec6bc3eeff5d8a, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[10].name
+      value: Katamari Damacy - Main Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8b1be8e83aad861459e1577652dd3ec3, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[11].name
+      value: Guile's Theme (goes with everything)
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: d1716965cd9df0147baf075f821843a1, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[12].name
+      value: Erland - Singing Birds
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 758413b45beffa24196bf83fee8b5444, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[13].name
+      value: Cynematic - Space City
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[13].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 22208ce0732d0284cbb8dd1506ea252f, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[14].name
+      value: Initial D - Deja Vu
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[14].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8e6a1b8eeb5643741871ab2b85cdef38, type: 3}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[0].name
+      value: Here Comes a Sandstorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
+      propertyPath: playlist.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5bd77d54b750bc845943d529f1ee1671, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 51f3e5081b01a9445926f728b22ea4a2, type: 2}
   m_IsPrefabParent: 0

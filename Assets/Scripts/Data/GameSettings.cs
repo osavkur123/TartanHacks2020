@@ -27,9 +27,8 @@ namespace Sanicball.Data
         public bool shadows = true;
         public bool motionBlur = false;
         public bool bloom = false;
-		public ReflectionQuality reflectionQuality = ReflectionQuality.Off;
+		    public ReflectionQuality reflectionQuality = ReflectionQuality.Off;
         public bool eSportsReady = false;
-
         public int numPlayers = 1;
         public bool greenModeReady = false;
         public bool blueModeReady = false;
