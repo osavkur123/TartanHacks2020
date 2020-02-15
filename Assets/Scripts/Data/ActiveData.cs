@@ -41,6 +41,8 @@ namespace Sanicball.Data
         [SerializeField]
         private AudioClip eSportsMusic;
         [SerializeField]
+        private AudioClip greenMusic;
+        [SerializeField]
         private ESportMode eSportsPrefab;
         [SerializeField]
         private greenMode greenModePrefab;
@@ -61,6 +63,7 @@ namespace Sanicball.Data
         public static Material ESportsTrail {get{return instance.eSportsTrail;}}
         public static GameObject ESportsHat {get{return instance.eSportsHat;}}
         public static AudioClip ESportsMusic {get{return instance.eSportsMusic;}}
+        public static AudioClip GreenMusic { get { return instance.greenMusic; } }
         public static ESportMode ESportsPrefab {get{return instance.eSportsPrefab;}}
         public static greenMode GreenModePrefab { get { return instance.greenModePrefab; } }
 
@@ -98,6 +101,7 @@ namespace Sanicball.Data
                 bool possible = false;
                 if (GameSettings.greenModeReady)
                 {
+                    possible = true;
                     Sanicball.Logic.MatchManager m = FindObjectOfType<Sanicball.Logic.MatchManager>();
                     if (m)
                     {
@@ -106,13 +110,12 @@ namespace Sanicball.Data
                         {
                             if (p.CtrlType != SanicballCore.ControlType.None)
                             {
-                                if (p.CharacterId == 13)
+                                if (p.CharacterId == 15)
                                 {
-                                    possible = true;
-                                }
-                                else
-                                {
-                                    return false;
+                                    ActiveData.Characters[15].stats.rollSpeed = 500;
+                                    ActiveData.Characters[15].stats.airSpeed = 300;
+                                    ActiveData.Characters[15].stats.jumpHeight = 0;
+                                    ActiveData.Characters[15].stats.grip = 200;
                                 }
                             }
                         }

@@ -58,7 +58,7 @@ namespace Sanicball.UI
             }
             else if (ActiveData.GameSettings.greenModeReady)
             {
-                charList = charList.Where(a => a.tier == SanicballCore.CharacterTier.Hyperspeed).ToArray();
+                charList = charList.Where(a => a.tier == SanicballCore.CharacterTier.Odd).ToArray();
             }
 
             CharacterSelectEntry cancelEnt = Instantiate(entryPrefab);
