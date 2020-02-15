@@ -14953,7 +14953,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11424328, guid: 77af82ed99a824045a652fbca65e44a3, type: 2}
       propertyPath: m_Text
-      value: BlueMode ready
+      value: RedMode ready
       objectReference: {fileID: 0}
     - target: {fileID: 11463696, guid: 77af82ed99a824045a652fbca65e44a3, type: 2}
       propertyPath: m_Text
