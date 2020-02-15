@@ -145,6 +145,12 @@ namespace Sanicball.UI
             {
                 selectedChar = activeEntries[2].Character;
             }
+
+            if(ActiveData.GameSettings.numPlayers == 2)
+            {
+                selectedChar = activeEntries[1].Character;
+                ActiveData.MatchSettings.SetAICharacter(1, 1);
+            }
         }
 
         private void Update()
