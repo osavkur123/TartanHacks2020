@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace Sanicball.Gameplay
 {
+
     public enum BallType
     {
         Player,
@@ -74,6 +75,7 @@ namespace Sanicball.Gameplay
     [RequireComponent(typeof(Rigidbody))]
     public class Ball : MonoBehaviour
     {
+        public GameObject secondCam;
         //These are set using Init() when balls are instantiated
         //But you can set them from the editor to quickly test out a track
         [Header("Initial stats")]
@@ -143,8 +145,15 @@ namespace Sanicball.Gameplay
                 RespawnRequested(this, System.EventArgs.Empty);
         }
 
+        //Player 1 has to be Sanic and Player 2 has to be Knackles
         public void Init(BallType type, ControlType ctrlType, int characterId, string nickname)
         {
+            if (ActiveData.GameSettings.numPlayers == 2 && characterId < ActiveData.GameSettings.numPlayers)
+            {
+                type = BallType.Player;
+                ctrlType = characterId == 0 ?  ControlType.Keyboard : ControlType.Joystick1;
+                nickname = "Player " + (characterId + 1).ToString();
+            }
             this.type = type;
             this.ctrlType = ctrlType;
             this.characterId = characterId;
@@ -154,7 +163,13 @@ namespace Sanicball.Gameplay
         private void Start()
         {
             Up = Vector3.up;
-
+            if (ActiveData.GameSettings.numPlayers == 2 && characterId < ActiveData.GameSettings.numPlayers)
+            {
+                type = BallType.Player;
+                ctrlType = characterId == 0 ?  ControlType.Keyboard : ControlType.Joystick1;
+                nickname = "Player " + (characterId + 1).ToString();
+            }
+            Debug.Log(characterId.ToString() + " " + type.ToString());
             //Set up drifty smoke
             smoke = Instantiate(prefabs.Smoke);
             smoke.target = this;

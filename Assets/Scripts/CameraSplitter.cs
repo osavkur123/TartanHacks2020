@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -11,64 +12,90 @@ namespace Sanicball
         private AudioListener listener;
 
         public int SplitscreenIndex { get; set; }
-
+        public Camera[] cameras;
         private void Start()
         {
-            cam = GetComponent<Camera>();
+            int count = Camera.allCamerasCount;
             listener = GetComponent<AudioListener>();
-            var splitters = FindObjectsOfType<CameraSplitter>().ToList();
-
-            int count = splitters.Count;
-            int index = SplitscreenIndex;
-
-            switch (count)
-            {
-                case 2:
-                    cam.rect = new Rect(0, index == 0 ? 0.5f : 0f, 1, 0.5f);
-                    break;
-
-                case 3:
-                    switch (index)
+            int index = 0;
+            cameras = Camera.allCameras;
+            foreach (Camera cam in Camera.allCameras) {
+                if (count == 2)
+                {
+                    if (index == 0)
                     {
-                        case 0:
-                            cam.rect = new Rect(0, 0.5f, 1, 0.5f);
-                            break;
-
-                        case 1:
-                            cam.rect = new Rect(0, 0, 0.5f, 0.5f);
-                            break;
-
-                        case 2:
-                            cam.rect = new Rect(0.5f, 0, 0.5f, 0.5f);
-                            break;
+                        cam.rect = new Rect(0f, 0f, 1f, 0.5f);
                     }
-                    break;
-
-                case 4:
-                    switch (index)
+                    else
                     {
-                        case 0:
-                            cam.rect = new Rect(0, 0.5f, 0.5f, 0.5f);
-                            break;
-
-                        case 1:
-                            cam.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
-                            break;
-
-                        case 2:
-                            cam.rect = new Rect(0, 0, 0.5f, 0.5f);
-                            break;
-
-                        case 3:
-                            cam.rect = new Rect(0.5f, 0, 0.5f, 0.5f);
-                            break;
+                        cam.rect = new Rect(0f, 0.5f, 1f, 0.5f);
                     }
-                    break;
+                }
+                else
+                {
+                    cam.rect = new Rect(0f, 0f, 1f, 1f);
+                }
+                /*switch (count)
+                {
+                    case 2:
+                        switch (index)
+                        {
+                            case 0:
+                                cam.rect = new Rect(0f, 0f, 1f, 0.5f);
+                                break;
 
-                default:
-                    cam.rect = new Rect(0, 0, 1, 1);
-                    break;
+                            case 1:
+                                cam.rect = new Rect(0.5f, 0f, 1f, 0.5f);
+                                break;
+                        }
+                        break;
+
+                    case 3:
+                        switch (index)
+                        {
+                            case 0:
+                                cam.rect = new Rect(0, 0.5f, 1, 0.5f);
+                                break;
+
+                            case 1:
+                                cam.rect = new Rect(0, 0, 0.5f, 0.5f);
+                                break;
+
+                            case 2:
+                                cam.rect = new Rect(0.5f, 0, 0.5f, 0.5f);
+                                break;
+                        }
+                        break;
+
+                    case 4:
+                        switch (index)
+                        {
+                            case 0:
+                                cam.rect = new Rect(0, 0.5f, 0.5f, 0.5f);
+                                break;
+
+                            case 1:
+                                cam.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
+                                break;
+
+                            case 2:
+                                cam.rect = new Rect(0, 0, 0.5f, 0.5f);
+                                break;
+
+                            case 3:
+                                cam.rect = new Rect(0.5f, 0, 0.5f, 0.5f);
+                                break;
+                        }
+                        break;
+
+                    default:
+                        cam.rect = new Rect(0, 0, 1, 1);
+                        break;
+                }*/
+                index++;
             }
+
+            
 
             if (listener)
             {

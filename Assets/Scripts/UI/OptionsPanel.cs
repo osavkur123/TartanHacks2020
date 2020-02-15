@@ -28,6 +28,7 @@ namespace Sanicball.UI
         public Text reflectionQuality;
         public Text eSportsReady;
         public Text greenModeReady;
+        public Text numPlayers;
         public Text blueModeReady;
         public Text redModeReady;
 
@@ -96,6 +97,7 @@ namespace Sanicball.UI
             reflectionQuality.text = tempSettings.reflectionQuality.ToString();
             eSportsReady.text = tempSettings.eSportsReady ? "Born Ready" : "No Way";
             greenModeReady.text = tempSettings.greenModeReady ? "2fast2green" : "lame";
+            numPlayers.text = tempSettings.numPlayers == 1 ? "1" : "2";
             blueModeReady.text = tempSettings.blueModeReady ? "da ba dee" : "da ba dye";
             redModeReady.text = tempSettings.redModeReady ? "red E" : "bourgeois E";
 
@@ -264,6 +266,13 @@ namespace Sanicball.UI
         public void BloomToggle()
         {
             tempSettings.bloom = !tempSettings.bloom;
+            UpdateFields();
+        }
+
+        public void NumPlayersToggle()
+        {
+            if (tempSettings.numPlayers == 1) tempSettings.numPlayers = 2;
+            else tempSettings.numPlayers = 1;
             UpdateFields();
         }
 
