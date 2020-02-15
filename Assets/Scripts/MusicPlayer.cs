@@ -89,8 +89,34 @@ namespace Sanicball
                 {
                     List<Song> p = playlist.ToList();
                     Song s = new Song();
-                    s.name = "Skrollex - Bungee Ride";
-                    s.clip = ActiveData.ESportsMusic;
+                    s.name = "It's not easy being green - Kermit the Froggo";
+                    s.clip = ActiveData.GreenMusic;
+                    p.Insert(0, s);
+                    playlist = p.ToArray();
+                }
+            }
+            else if (ActiveData.blueModeFullyReady)
+            {
+                Sanicball.Logic.MatchManager m = FindObjectOfType<Sanicball.Logic.MatchManager>();
+                if (!m.InLobby)
+                {
+                    List<Song> p = playlist.ToList();
+                    Song s = new Song();
+                    s.name = "I'm Blue - Eiffel 65";
+                    s.clip = ActiveData.BlueMusic;
+                    p.Insert(0, s);
+                    playlist = p.ToArray();
+                }
+            }
+            else if (ActiveData.redModeFullyReady)
+            {
+                Sanicball.Logic.MatchManager m = FindObjectOfType<Sanicball.Logic.MatchManager>();
+                if (!m.InLobby)
+                {
+                    List<Song> p = playlist.ToList();
+                    Song s = new Song();
+                    s.name = "Our national anthem - Toad";
+                    s.clip = ActiveData.RedMusic;
                     p.Insert(0, s);
                     playlist = p.ToArray();
                 }

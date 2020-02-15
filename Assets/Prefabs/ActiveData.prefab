@@ -202,7 +202,7 @@ MonoBehaviour:
     ballSize: 2
     alternativeMesh: {fileID: 0}
     collisionMesh: {fileID: 0}
-    tier: 1
+    tier: 0
     hidden: 0
   - name: Dr. Aggmen
     artBy: Artist Tyson Hesse
@@ -219,7 +219,7 @@ MonoBehaviour:
     ballSize: 1
     alternativeMesh: {fileID: 4300000, guid: f7e58024306f668428fe7ffa6a2cc208, type: 3}
     collisionMesh: {fileID: 4300000, guid: 8bad5274dce3b554baa16f737265cba4, type: 3}
-    tier: 1
+    tier: 0
     hidden: 0
   - name: Chermy Bee
     artBy: DazeDream
@@ -236,7 +236,7 @@ MonoBehaviour:
     ballSize: 0.8
     alternativeMesh: {fileID: 0}
     collisionMesh: {fileID: 0}
-    tier: 1
+    tier: 0
     hidden: 0
   - name: Sulver
     artBy: DazeDream
@@ -287,7 +287,7 @@ MonoBehaviour:
     ballSize: 1
     alternativeMesh: {fileID: 4300000, guid: 62feaf2fb2598524dab37715d8a44e7a, type: 3}
     collisionMesh: {fileID: 0}
-    tier: 0
+    tier: 1
     hidden: 0
   - name: Super Sanic
     artBy: Deviantart user franz888
@@ -321,7 +321,7 @@ MonoBehaviour:
     ballSize: 1
     alternativeMesh: {fileID: 4300000, guid: 8271211632fa8aa4e8b7c3f1bd3abbdb, type: 3}
     collisionMesh: {fileID: 4300000, guid: 8271211632fa8aa4e8b7c3f1bd3abbdb, type: 3}
-    tier: 1
+    tier: 0
     hidden: 0
   - name: Ogre
     artBy: didney
@@ -339,7 +339,7 @@ MonoBehaviour:
     alternativeMesh: {fileID: 0}
     collisionMesh: {fileID: 0}
     tier: 1
-    hidden: 1
+    hidden: 0
   gameJoltInfo:
     gameID: 0
     privateKey: 
@@ -349,8 +349,13 @@ MonoBehaviour:
   eSportsTrail: {fileID: 2100000, guid: 535ce71ad14791d40b6cbe98a2276283, type: 2}
   eSportsHat: {fileID: 132204, guid: 8db695c5167175b4f8c02e1d1f7e5b99, type: 2}
   eSportsMusic: {fileID: 8300000, guid: 44aeddca0c186224090a76d97139eaa4, type: 3}
+  greenMusic: {fileID: 8300000, guid: ec13fcdefeff6ae4981d37131c824d9f, type: 3}
+  blueMusic: {fileID: 8300000, guid: 929642433f657244fa5a1c625cdf3bb6, type: 3}
+  redMusic: {fileID: 8300000, guid: 6304311cd40375e4da5be7ba6127c712, type: 3}
   eSportsPrefab: {fileID: 11400000, guid: f55190f64bbb0c349bcd0f128756a753, type: 2}
   greenModePrefab: {fileID: 11470328, guid: d877379dcf0f8e84d9c57fc0b5b68fc8, type: 2}
+  blueModePrefab: {fileID: 11410320, guid: 477daed5b835c1c4e9f2563d3761f5c6, type: 2}
+  redModePrefab: {fileID: 11468492, guid: c9d6b8c571ba0564e854fdf6d5c5cde5, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -207,6 +207,7 @@ namespace Sanicball.Gameplay
             }
             else if (ActiveData.GameSettings.greenModeReady)
             {
+                hatPrefab = ActiveData.ChristmasHat;
             }
 
             //Spawn hat
@@ -267,7 +268,7 @@ namespace Sanicball.Gameplay
             if (c.name == "Super Sanic" && ActiveData.GameSettings.eSportsReady) {
                 GetComponent<TrailRenderer>().material = ActiveData.ESportsTrail;
             }
-            else if (c.name == "Super Sanic" && ActiveData.GameSettings.greenModeReady)
+            else if (ActiveData.GameSettings.greenModeReady)
             {
                 GetComponent<TrailRenderer>().material = ActiveData.ESportsTrail;
             }

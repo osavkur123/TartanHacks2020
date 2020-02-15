@@ -58,7 +58,7 @@ namespace Sanicball.UI
             }
             else if (ActiveData.GameSettings.greenModeReady)
             {
-                charList = charList.Where(a => a.tier == SanicballCore.CharacterTier.Hyperspeed).ToArray();
+                charList = charList.Where(a => a.tier == SanicballCore.CharacterTier.Odd).ToArray();
             }
 
             CharacterSelectEntry cancelEnt = Instantiate(entryPrefab);
@@ -123,11 +123,28 @@ namespace Sanicball.UI
         {
             selected = newSelection;
             selectedChar = activeEntries[selected].Character;
+            if (ActiveData.GameSettings.blueModeReady)
+            {
+                selectedChar = activeEntries[1].Character;
+            }
+            if (ActiveData.GameSettings.blueModeReady && selected == 1)
+            {
+                selectedChar = activeEntries[13].Character;
+            }
 
             if (selected == 0)
                 characterNameLabel.text = "Leave match";
+            else if (ActiveData.GameSettings.blueModeReady && selected != 1 && selected != 13)
+                characterNameLabel.text = "NOT BLOO ENOUGH";
+            else if (ActiveData.GameSettings.blueModeReady)
+                characterNameLabel.text = "BLOO";
             else
                 characterNameLabel.text = selectedChar.name;
+
+            if (ActiveData.GameSettings.redModeReady)
+            {
+                selectedChar = activeEntries[2].Character;
+            }
         }
 
         private void Update()
