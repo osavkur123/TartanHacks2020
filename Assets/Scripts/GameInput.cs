@@ -148,7 +148,13 @@ namespace Sanicball
                     return KeysToVector3(right, left, false, false, forward, back);
 
                 case ControlType.Joystick1:
-                    return new Vector3(Input.GetAxis(joystick1LeftX), 0, Input.GetAxis(joystick1LeftY));
+                    forward = Input.GetKey(KeyCode.I) && !KeyboardDisabled;
+                    left = Input.GetKey(KeyCode.J) && !KeyboardDisabled;
+                    back = Input.GetKey(KeyCode.K) && !KeyboardDisabled;
+                    right = Input.GetKey(KeyCode.L) && !KeyboardDisabled;
+                    //bool up = Input.GetKey(KeyCode.E) && !KeyboardDisabled;
+                    //bool down = Input.GetKey(KeyCode.Q) && !KeyboardDisabled;
+                    return KeysToVector3(right, left, false, false, forward, back);
 
                 case ControlType.Joystick2:
                     return new Vector3(Input.GetAxis(joystick2LeftX), 0, Input.GetAxis(joystick2LeftY));
@@ -174,7 +180,13 @@ namespace Sanicball
                     return KeysToVector2(right, left, up, down);
 
                 case ControlType.Joystick1:
-                    return new Vector2(Input.GetAxis(joystick1RightX), Input.GetAxis(joystick1RightY));
+                    up = Input.GetKey(KeyCode.I) && !KeyboardDisabled;
+                    left = Input.GetKey(KeyCode.J) && !KeyboardDisabled;
+                    down = Input.GetKey(KeyCode.K) && !KeyboardDisabled;
+                    right = Input.GetKey(KeyCode.L) && !KeyboardDisabled;
+                    //bool up = Input.GetKey(KeyCode.E) && !KeyboardDisabled;
+                    //bool down = Input.GetKey(KeyCode.Q) && !KeyboardDisabled;
+                    return KeysToVector2(right, left, up, down);
 
                 case ControlType.Joystick2:
                     return new Vector2(Input.GetAxis(joystick2RightX), Input.GetAxis(joystick2RightY));
@@ -196,7 +208,7 @@ namespace Sanicball
                     return Input.GetKey(KeyCode.UpArrow);
 
                 case ControlType.Joystick1:
-                    return Input.GetAxis(joystick1DpadY) == 1f;
+                    return Input.GetKey(KeyCode.I) && !KeyboardDisabled;
                 //return Input.GetKeyDown(KeyCode.Joystick1Button5);
                 case ControlType.Joystick2:
                     return Input.GetAxis(joystick2DpadY) == 1f;
@@ -218,7 +230,7 @@ namespace Sanicball
                     return Input.GetKey(KeyCode.DownArrow);
 
                 case ControlType.Joystick1:
-                    return Input.GetAxis(joystick1DpadY) == -1f;
+                    return Input.GetKey(KeyCode.K) && !KeyboardDisabled;
                 //return Input.GetKeyDown(KeyCode.Joystick1Button6);
                 case ControlType.Joystick2:
                     return Input.GetAxis(joystick2DpadY) == -1f;
@@ -240,7 +252,7 @@ namespace Sanicball
                     return Input.GetKey(KeyCode.LeftArrow);
 
                 case ControlType.Joystick1:
-                    return Input.GetAxis(joystick1DpadX) == -1f;
+                    return Input.GetKey(KeyCode.J) && !KeyboardDisabled;
                 //return Input.GetKeyDown(KeyCode.Joystick1Button7);
                 case ControlType.Joystick2:
                     return Input.GetAxis(joystick2DpadX) == -1f;
@@ -262,7 +274,7 @@ namespace Sanicball
                     return Input.GetKey(KeyCode.RightArrow);
 
                 case ControlType.Joystick1:
-                    return Input.GetAxis(joystick1DpadX) == 1f;
+                    return Input.GetKey(KeyCode.L) && !KeyboardDisabled;
                 //return Input.GetKeyDown(KeyCode.Joystick1Button8);
                 case ControlType.Joystick2:
                     return Input.GetAxis(joystick2DpadX) == 1f;
@@ -284,7 +296,7 @@ namespace Sanicball
                     return Input.GetKey(ActiveData.Keybinds[Keybind.Brake]) && !KeyboardDisabled;
 
                 case ControlType.Joystick1:
-                    return Input.GetKey(KeyCode.Joystick1Button1);
+                    return Input.GetKey(KeyCode.H) && !KeyboardDisabled;
 
                 case ControlType.Joystick2:
                     return Input.GetKey(KeyCode.Joystick2Button1);
@@ -306,7 +318,7 @@ namespace Sanicball
                     return Input.GetKeyDown(ActiveData.Keybinds[Keybind.Jump]) && !KeyboardDisabled;
 
                 case ControlType.Joystick1:
-                    return Input.GetKeyDown(KeyCode.Joystick1Button0);
+                    return Input.GetKey(KeyCode.N) && !KeyboardDisabled;
 
                 case ControlType.Joystick2:
                     return Input.GetKeyDown(KeyCode.Joystick2Button0);
@@ -328,7 +340,7 @@ namespace Sanicball
                     return Input.GetKeyDown(ActiveData.Keybinds[Keybind.Respawn]) && !KeyboardDisabled;
 
                 case ControlType.Joystick1:
-                    return Input.GetKeyDown(KeyCode.Joystick1Button3);
+                    return Input.GetKey(KeyCode.Y) && !KeyboardDisabled;
 
                 case ControlType.Joystick2:
                     return Input.GetKeyDown(KeyCode.Joystick2Button3);
