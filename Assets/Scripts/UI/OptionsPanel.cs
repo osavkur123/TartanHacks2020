@@ -92,8 +92,8 @@ namespace Sanicball.UI
             motionBlur.text = tempSettings.motionBlur ? "On" : "Off";
             bloom.text = tempSettings.bloom ? "On" : "Off";
             reflectionQuality.text = tempSettings.reflectionQuality.ToString();
-            eSportsReady.text = tempSettings.greenModeReady ? "green" : "bad";
-            //greenModeReady.text = tempSettings.eSportsReady ? "Born Ready" : "No Way";
+            eSportsReady.text = tempSettings.eSportsReady ? "Born Ready" : "No Way";
+            greenModeReady.text = tempSettings.greenModeReady ? "2fast2green" : "lame";
 
             controlMode.text = tempSettings.useOldControls ? "Rotate manually (Precise)" : "Follow velocity (Intuitive)";
             cameraSpeedMouse.text = tempSettings.oldControlsMouseSpeed.ToString("n1");
@@ -279,13 +279,13 @@ namespace Sanicball.UI
             UpdateFields();
         }
 
-        public void greenModeToggle()
+        public void ESportsToggle()
         {
             tempSettings.eSportsReady = !tempSettings.eSportsReady;
             UpdateFields();
         }
 
-        public void ESportsToggle()
+        public void greenModeToggle()
         {
             tempSettings.greenModeReady = !tempSettings.greenModeReady;
             UpdateFields();
