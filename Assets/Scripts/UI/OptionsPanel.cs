@@ -28,6 +28,7 @@ namespace Sanicball.UI
         public Text reflectionQuality;
         public Text eSportsReady;
         public Text greenModeReady;
+        public Text blueModeReady;
 
         [Header("Gameplay")]
         public Text controlMode;
@@ -94,6 +95,7 @@ namespace Sanicball.UI
             reflectionQuality.text = tempSettings.reflectionQuality.ToString();
             eSportsReady.text = tempSettings.eSportsReady ? "Born Ready" : "No Way";
             greenModeReady.text = tempSettings.greenModeReady ? "2fast2green" : "lame";
+            blueModeReady.text = tempSettings.blueModeReady ? "da ba dee" : "da ba dye";
 
             controlMode.text = tempSettings.useOldControls ? "Rotate manually (Precise)" : "Follow velocity (Intuitive)";
             cameraSpeedMouse.text = tempSettings.oldControlsMouseSpeed.ToString("n1");
@@ -293,6 +295,12 @@ namespace Sanicball.UI
             ActiveData.Characters[15].stats.airSpeed = 5;
             ActiveData.Characters[15].stats.jumpHeight = 4;
             ActiveData.Characters[15].stats.grip = 20;
+        }
+
+        public void blueModeToggle()
+        {
+            tempSettings.blueModeReady = !tempSettings.blueModeReady;
+            UpdateFields();
         }
 
         public void UseOldControlsToggle()

@@ -24,6 +24,7 @@ namespace Sanicball.UI
 
         ESportMode esport;
         greenMode green;
+        blueMode blue;
 
         void Start() {
             if (ActiveData.ESportsFullyReady) {
@@ -32,6 +33,10 @@ namespace Sanicball.UI
             else if (ActiveData.greenModeFullyReady)
             {
                 green = Instantiate(ActiveData.GreenModePrefab);
+            }
+            else if (ActiveData.blueModeFullyReady)
+            {
+                blue = Instantiate(ActiveData.BlueModePrefab);
             }
         }
 
@@ -55,24 +60,40 @@ namespace Sanicball.UI
                 {
                     case 4:
                         countdownText = "READY";
+                        if (blue)
+                        {
+                            countdownText = "I'M";
+                        }
                         countdownFontSize = 80;
                         UISound.Play(countdown1);
                         break;
 
                     case 3:
                         countdownText = "STEADY";
+                        if (blue)
+                        {
+                            countdownText = "BLUE";
+                        }
                         countdownFontSize = 100;
                         UISound.Play(countdown1);
                         break;
 
                     case 2:
                         countdownText = "GET SET";
+                        if (blue)
+                        {
+                            countdownText = "DA BA DEE";
+                        }
                         countdownFontSize = 120;
                         UISound.Play(countdown1);
                         break;
 
                     case 1:
                         countdownText = "GO FAST";
+                        if (blue)
+                        {
+                            countdownText = "DA BA DYE";
+                        }
                         countdownFontSize = 160;
                         UISound.Play(countdown2);
                         if (OnCountdownFinished != null)
@@ -84,6 +105,10 @@ namespace Sanicball.UI
                         else if (green)
                         {
                             green.StartTheShit();
+                        }
+                        else if (blue)
+                        {
+                            blue.StartTheShit();
                         }
                         break;
 

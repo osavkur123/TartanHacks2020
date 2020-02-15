@@ -350,8 +350,10 @@ MonoBehaviour:
   eSportsHat: {fileID: 132204, guid: 8db695c5167175b4f8c02e1d1f7e5b99, type: 2}
   eSportsMusic: {fileID: 8300000, guid: 44aeddca0c186224090a76d97139eaa4, type: 3}
   greenMusic: {fileID: 8300000, guid: ec13fcdefeff6ae4981d37131c824d9f, type: 3}
+  blueMusic: {fileID: 8300000, guid: 929642433f657244fa5a1c625cdf3bb6, type: 3}
   eSportsPrefab: {fileID: 11400000, guid: f55190f64bbb0c349bcd0f128756a753, type: 2}
   greenModePrefab: {fileID: 11470328, guid: d877379dcf0f8e84d9c57fc0b5b68fc8, type: 2}
+  blueModePrefab: {fileID: 11410320, guid: 477daed5b835c1c4e9f2563d3761f5c6, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -123,11 +123,21 @@ namespace Sanicball.UI
         {
             selected = newSelection;
             selectedChar = activeEntries[selected].Character;
+            if (ActiveData.GameSettings.blueModeReady)
+            {
+                selectedChar = activeEntries[1].Character;
+            }
+            if (selected == 1)
+            {
+                selectedChar = activeEntries[13].Character;
+            }
 
             if (selected == 0)
                 characterNameLabel.text = "Leave match";
+            else if (selected != 1 && selected != 13)
+                characterNameLabel.text = "NOT BLOO ENOUGH";
             else
-                characterNameLabel.text = selectedChar.name;
+                characterNameLabel.text = "BLOO";
         }
 
         private void Update()
