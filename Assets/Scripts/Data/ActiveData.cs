@@ -43,7 +43,7 @@ namespace Sanicball.Data
         [SerializeField]
         private ESportMode eSportsPrefab;
         [SerializeField]
-        private ESportMode greenModePrefab;
+        private greenMode greenModePrefab;
 
         #endregion Fields
 
@@ -62,7 +62,7 @@ namespace Sanicball.Data
         public static GameObject ESportsHat {get{return instance.eSportsHat;}}
         public static AudioClip ESportsMusic {get{return instance.eSportsMusic;}}
         public static ESportMode ESportsPrefab {get{return instance.eSportsPrefab;}}
-        public static ESportMode GreenModePrefab { get { return instance.greenModePrefab; } } // KJ
+        public static greenMode GreenModePrefab { get { return instance.greenModePrefab; } }
 
         public static bool ESportsFullyReady {
             get {

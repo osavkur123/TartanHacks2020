@@ -31,7 +31,7 @@ namespace Sanicball.UI
             }
             else if (ActiveData.greenModeFullyReady)
             {
-                esport = Instantiate(ActiveData.GreenModePrefab);
+                green = Instantiate(ActiveData.GreenModePrefab);
             }
         }
 
