@@ -348,7 +348,7 @@ MonoBehaviour:
       jumpHeight: 4
       grip: 20
     material: {fileID: 0}
-    icon: {fileID: 21300000, guid: 69604edd7f9387841a777c31d9ad559a, type: 3}
+    icon: {fileID: 21300000, guid: 71a9539c0fd1be94d93d79398a34c821, type: 3}
     color: {r: 0.07586192, g: 0, b: 1, a: 1}
     minimapIcon: {fileID: 2100000, guid: f5d23da2c0fe42d49b12083694a8ddd0, type: 2}
     trail: {fileID: 2100000, guid: dcca274f4ea616e47b077f91462bb930, type: 2}
@@ -365,7 +365,7 @@ MonoBehaviour:
       jumpHeight: 4
       grip: 20
     material: {fileID: 2100000, guid: 38a419f08966e214f9b346753fc45b4d, type: 2}
-    icon: {fileID: 21300000, guid: 69604edd7f9387841a777c31d9ad559a, type: 3}
+    icon: {fileID: 21300000, guid: fcac47643ed0b884ba66157d894d95dd, type: 3}
     color: {r: 0.033222456, g: 0.5955882, b: 0.013137988, a: 1}
     minimapIcon: {fileID: 2100000, guid: f5d23da2c0fe42d49b12083694a8ddd0, type: 2}
     trail: {fileID: 2100000, guid: dcca274f4ea616e47b077f91462bb930, type: 2}
