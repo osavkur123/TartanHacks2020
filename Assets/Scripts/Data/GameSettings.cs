@@ -31,6 +31,7 @@ namespace Sanicball.Data
         public bool eSportsReady = false;
         public bool greenModeReady = false;
         public bool blueModeReady = false;
+        public bool redModeReady = false;
 
         [Header("Gameplay")]
         public bool useOldControls = false;
@@ -70,6 +71,7 @@ namespace Sanicball.Data
             eSportsReady = original.eSportsReady;
             greenModeReady = original.greenModeReady;
             blueModeReady = original.blueModeReady;
+            redModeReady = original.redModeReady;
 
             useOldControls = original.useOldControls;
             oldControlsMouseSpeed = original.oldControlsMouseSpeed;

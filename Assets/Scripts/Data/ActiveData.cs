@@ -45,11 +45,15 @@ namespace Sanicball.Data
         [SerializeField]
         private AudioClip blueMusic;
         [SerializeField]
+        private AudioClip redMusic;
+        [SerializeField]
         private ESportMode eSportsPrefab;
         [SerializeField]
         private greenMode greenModePrefab;
         [SerializeField]
         private blueMode blueModePrefab;
+        [SerializeField]
+        private redMode redModePrefab;
 
         #endregion Fields
 
@@ -69,9 +73,11 @@ namespace Sanicball.Data
         public static AudioClip ESportsMusic {get{return instance.eSportsMusic;}}
         public static AudioClip GreenMusic { get { return instance.greenMusic; } }
         public static AudioClip BlueMusic { get { return instance.blueMusic; } }
+        public static AudioClip RedMusic { get { return instance.redMusic; } }
         public static ESportMode ESportsPrefab {get{return instance.eSportsPrefab;}}
         public static greenMode GreenModePrefab { get { return instance.greenModePrefab; } }
         public static blueMode BlueModePrefab { get { return instance.blueModePrefab; } }
+        public static redMode RedModePrefab { get { return instance.redModePrefab; } }
 
         public static bool ESportsFullyReady {
             get {
@@ -137,6 +143,19 @@ namespace Sanicball.Data
             {
                 bool possible = false;
                 if (GameSettings.blueModeReady)
+                {
+                    possible = true;
+                }
+                return possible;
+            }
+        }
+
+        public static bool redModeFullyReady
+        {
+            get
+            {
+                bool possible = false;
+                if (GameSettings.redModeReady)
                 {
                     possible = true;
                 }

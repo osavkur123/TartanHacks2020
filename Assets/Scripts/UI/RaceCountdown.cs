@@ -25,6 +25,7 @@ namespace Sanicball.UI
         ESportMode esport;
         greenMode green;
         blueMode blue;
+        redMode red;
 
         void Start() {
             if (ActiveData.ESportsFullyReady) {
@@ -37,6 +38,10 @@ namespace Sanicball.UI
             else if (ActiveData.blueModeFullyReady)
             {
                 blue = Instantiate(ActiveData.BlueModePrefab);
+            }
+            else if (ActiveData.redModeFullyReady)
+            {
+                red = Instantiate(ActiveData.RedModePrefab);
             }
         }
 
@@ -109,6 +114,10 @@ namespace Sanicball.UI
                         else if (blue)
                         {
                             blue.StartTheShit();
+                        }
+                        else if (red)
+                        {
+                            red.StartTheShit();
                         }
                         break;
 

@@ -108,6 +108,19 @@ namespace Sanicball
                     playlist = p.ToArray();
                 }
             }
+            else if (ActiveData.redModeFullyReady)
+            {
+                Sanicball.Logic.MatchManager m = FindObjectOfType<Sanicball.Logic.MatchManager>();
+                if (!m.InLobby)
+                {
+                    List<Song> p = playlist.ToList();
+                    Song s = new Song();
+                    s.name = "Our national anthem - Toad";
+                    s.clip = ActiveData.RedMusic;
+                    p.Insert(0, s);
+                    playlist = p.ToArray();
+                }
+            }
 
 
             aSource.clip = playlist[0].clip;
